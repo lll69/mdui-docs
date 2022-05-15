@@ -1,4 +1,4 @@
-## [mdui-docs](latest_index)
+# [mdui-docs](latest_index)
 * [latest](https://www.mdui.org/docs)
 * [0.4.3](0.4.3)
 * [0.4.2](0.4.2)
