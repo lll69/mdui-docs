@@ -112,17 +112,21 @@ export default (currentVer: string) => {
                 option.selected = version === currentVer;
                 select.appendChild(option);
             }
-            select.className = "mdui-select";
             select.addEventListener("change", () => {
                 const newVersion = select.value;
                 select.value = currentVer;
                 gotoVersion(versions, newVersion);
             });
-            const spacer = document.querySelector(".mdui-typo-title") || document.querySelector(".mdui-toolbar-spacer");
+            if (currentVer >= "0.3.0") {
+                select.className = "mdui-select";
+                select.style.color = "inherit";
+            }
+            const spacer = document.querySelector(".mdui-toolbar-spacer");
             if (spacer) {
                 spacer.parentElement!.insertBefore(select, spacer);
             }
         }
     }
+    document.title = document.title.replace("MDUI 开发文档", "MDUI " + currentVer + " 开发文档");
     initCounter();
 }
