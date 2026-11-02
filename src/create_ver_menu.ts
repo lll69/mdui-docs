@@ -100,7 +100,7 @@ const gotoVersion = (versions: string[], newVersion: string) => {
 export default (currentVer: string) => {
     const splitHref = location.href.split("/");
     const file = splitHref[splitHref.length - 1].toLowerCase().replace(".html", "");
-    const versions: string[] | undefined = FILE_VERSIONS[file || "index"];
+    const versions: string[] | undefined = FILE_VERSIONS[(file == "latest_index" ? "index" : file) || "index"];
     if (versions) {
         const verIndex = versions.indexOf(currentVer);
         if (verIndex >= 0) {
