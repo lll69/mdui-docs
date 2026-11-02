@@ -91,7 +91,7 @@ const gotoVersion = (versions: string[], newVersion: string) => {
     } else {
         splitHref[splitHref.length - 2] += "/" + newVersion;
     }
-    const newUrl = splitHref.join("/");
+    const newUrl = splitHref.join("/").replace("latest_index", "index");
     if (newUrl !== oldUrl) {
         location.href = newUrl;
     }
